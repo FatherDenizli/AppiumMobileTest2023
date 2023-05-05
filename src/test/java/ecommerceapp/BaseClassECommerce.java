@@ -20,7 +20,7 @@ public class BaseClassECommerce {
         cap.setCapability(MobileCapabilityType.DEVICE_NAME, "RealDevice");
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "60000");
-       cap.setCapability("chromedriverExecutable","C:\\Users\\user\\IdeaProjects\\AppiumTechpro2022\\src\\main\\resources\\drivers\\chromedriver111.exe");
+       //cap.setCapability("chromedriverExecutable","C:\\Users\\user\\IdeaProjects\\AppiumTechpro2022\\src\\main\\resources\\drivers\\chromedriver111.exe");
         cap.setCapability(MobileCapabilityType.APP, "C:\\Users\\user\\IdeaProjects\\AppiumTechpro2022\\src\\Apps\\General-Store.apk");
 
         cap.setCapability(MobileCapabilityType.NO_RESET, "true");

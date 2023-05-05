@@ -38,7 +38,9 @@ public class ECommerceLongPress05 {
         //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
 
         MobileElement homeScreenTitle = driver.findElementByXPath("//android.widget.TextView[@text='General Store']");
-        MobileElement countrySnipper = driver.findElementById("com.androidsample.generalstore:id/spinnerCountry");
+        MobileElement countrySpinner = driver.findElementById("com.androidsample.generalstore:id/spinnerCountry");
+
+
 
         MobileElement nameBox = driver.findElementById("com.androidsample.generalstore:id/nameField");
         MobileElement maleRadioButton = driver.findElementById("com.androidsample.generalstore:id/radioMale");
@@ -48,7 +50,7 @@ public class ECommerceLongPress05 {
         Assert.assertTrue(homeScreenTitle.isDisplayed());
 
         //ulkeyi secmek icin ulke butununa bastik
-        countrySnipper.click();
+        countrySpinner.click();
 
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Belgium\"))");
 
