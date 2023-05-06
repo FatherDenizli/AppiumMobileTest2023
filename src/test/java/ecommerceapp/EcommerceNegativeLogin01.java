@@ -7,9 +7,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 
-import static ecommerceapp.BaseClassECommerce.getAndroidDriver;
-
-public class EcommerceNegativeLogin extends BaseClassECommerce{
+public class EcommerceNegativeLogin01 extends BaseClassECommerce{
 /*
     //1- Fill the form details and verify Toast error messages displayed appropriately for wrong inputs
     //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
