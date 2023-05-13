@@ -87,7 +87,7 @@ public class ECommerceTotalAmountValidation05Scroll extends BaseClassECommerce {
         MobileElement secondProduct = driver.findElementByXPath("//android.widget.TextView[@text='ADD TO CART']");
         secondProduct.click();
 
-        // Click sepet
+        // Click basket
         driver.findElementById("com.androidsample.generalstore:id/appbar_btn_cart").click();
         Thread.sleep(5000);
 
@@ -100,8 +100,32 @@ public class ECommerceTotalAmountValidation05Scroll extends BaseClassECommerce {
         // Asssert that second product's name is "Nike SFB Jungle".
         Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='PG 3']").getText(),"PG 3");
 
+        // products prices  in basket
+        MobileElement firstProductPrice=driver.findElementByXPath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice'])[1]");
+        MobileElement secondProductPrice=driver.findElementByXPath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice'])[2]");
+        MobileElement totalPrice=driver.findElementByXPath("//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/totalAmountLbl']");
+        System.out.println(firstProductPrice.getText());
+        System.out.println(secondProductPrice.getText());
+
+        String firstPrice=firstProductPrice.getText().substring(1);
+        String secondPrice=secondProductPrice.getText().substring(1);
+        String total=totalPrice.getText().substring(1);
 
 
+        double firstPriceDouble=Double.valueOf(firstPrice);
+        System.out.println(firstPriceDouble);
+        double secondPriceDouble=Double.valueOf(secondPrice);
+        System.out.println(secondPriceDouble);
+        double totalPriceDouble=Double.valueOf(total);
+        System.out.println(totalPriceDouble);
+
+
+    Assert.assertEquals(totalPriceDouble, (firstPriceDouble+secondPriceDouble));
+
+
+        Thread.sleep(10000);
+        //close app
+        driver.closeApp();
 
 
 
