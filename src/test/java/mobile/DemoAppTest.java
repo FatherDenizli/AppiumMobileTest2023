@@ -29,19 +29,19 @@ public class DemoAppTest {
            // cap.setCapability("browsername", "chrome");
 
 
-        cap.setCapability("platformName", "Android");
+            cap.setCapability("platformName", "Android");
             cap.setCapability("platformVersion", "8.1.0");
 
             cap.setCapability(MobileCapabilityType.DEVICE_NAME, "RealDevice");
             cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
             cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "60000");
-        cap.setCapability("app", "C:\\apkfiles\\ApiDemos.apk");
+            cap.setCapability("app", "C:\\apkfiles\\ApiDemos.apk");
         //   cap.setCapability("deviceName", "Android Emulator");
         //   cap.setCapability("deviceName", "Pixel 2 API 28");
 
 
-        cap.setCapability("appPackage", "io.appium.android.apis");
-        cap.setCapability("appActivity", ".ApiDemos");
+//        cap.setCapability("appPackage", "io.appium.android.apis");
+//        cap.setCapability("appActivity", ".ApiDemos");
 
 
 

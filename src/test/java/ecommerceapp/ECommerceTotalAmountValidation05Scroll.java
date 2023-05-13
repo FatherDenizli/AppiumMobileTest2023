@@ -78,20 +78,32 @@ public class ECommerceTotalAmountValidation05Scroll extends BaseClassECommerce {
         int end_x = (int) (dimension.width * 0.5);
         int end_y = (int) (dimension.height * 0.2);
 
-        for (int i=0; i<1; i++) {
+        for (int i=0; i<2; i++) {
 
             TouchAction touchAction = new TouchAction(driver);
             touchAction.press(PointOption.point(start_x, start_y)).moveTo(PointOption.point(end_x, end_y)).perform();
         }
-         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Nike SFB Jungle\"))");
-
-
+         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"PG 3\"))");
         MobileElement secondProduct = driver.findElementByXPath("//android.widget.TextView[@text='ADD TO CART']");
         secondProduct.click();
 
-        // Click spet
+        // Click sepet
         driver.findElementById("com.androidsample.generalstore:id/appbar_btn_cart").click();
         Thread.sleep(5000);
+
+        // Asssert that we are in basket page.
+        Assert.assertTrue(driver.findElementById("com.androidsample.generalstore:id/toolbar_title").isDisplayed());
+
+        // Asssert that first product's name is "Air Jordan 9 Retro".
+        Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='Air Jordan 4 Retro']").getText(),"Air Jordan 4 Retro");
+
+        // Asssert that second product's name is "Nike SFB Jungle".
+        Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='PG 3']").getText(),"PG 3");
+
+
+
+
+
 
 
 
